@@ -1,14 +1,13 @@
 package com.example.server.config;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/health")
+@Controller
 public class HealthController {
-    @GetMapping
-    public String getHealth(){
-        return "Server running Successfully 🚀🚀🚀";
+
+    @GetMapping("/")
+    public String home() {
+        return "index"; // maps to index.html
     }
 }
