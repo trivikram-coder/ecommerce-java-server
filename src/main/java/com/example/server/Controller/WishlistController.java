@@ -36,9 +36,11 @@ public class WishlistController {
         String token = header.substring(7);
         String email = jwtUtil.extractUserName(token);
 
-        String result = wishlistService.addToWishlist(wishlist, email);
-
-        return ResponseEntity.ok(Map.of("message", result));
+        Wishlist result = wishlistService.addToWishlist(wishlist, email);
+        if(result==null){
+            return ResponseEntity.ok(Map.of("message","Already in the cart"));
+        }
+        return ResponseEntity.ok(Map.of("message", "Added to wishlist","data",result));
     }
 
     // ✅ GET WISHLIST ITEMS

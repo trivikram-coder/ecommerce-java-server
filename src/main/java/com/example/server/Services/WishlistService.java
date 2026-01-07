@@ -15,18 +15,18 @@ public class WishlistService {
     private WishlistRepo wishlistRepo;
 
     // ✅ ADD TO WISHLIST
-    public String addToWishlist(Wishlist wishlist, String email) {
+    public Wishlist addToWishlist(Wishlist wishlist, String email) {
 
         Optional<Wishlist> existingItem =
                 wishlistRepo.findByEmailAndProductId(email, wishlist.getProductId());
 
         if (existingItem.isPresent()) {
-            return "Already in wishlist";
+            return new Wishlist();
         }
 
         wishlist.setEmail(email);
-        wishlistRepo.save(wishlist);
-        return "Item added to wishlist";
+
+        return  wishlistRepo.save(wishlist);
     }
 
     // ✅ GET WISHLIST ITEMS
