@@ -50,7 +50,7 @@ public class SecurityConfig {
                 "https://vkstoreonline.netlify.app",
                 "https://vkstoreadmin.netlify.app",
                 "https://vkstore.site",
-                "https://www.vkstore.site",
+                "https://admin.vkstore.site",
                 "http://localhost:5173",
                 "http://localhost:5174",
                 "http://127.0.0.1:5500"
