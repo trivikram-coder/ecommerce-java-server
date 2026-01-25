@@ -20,7 +20,11 @@ public class OrderController {
 
     @Autowired
     private OrderRepository orderRepository;
-
+    //-----------------Default Request------------
+    @GetMapping
+    public String order(){
+        return "Order controller running";
+    }
     // ---------------- ADD ORDER ----------------
     @PostMapping("/add")
     public ResponseEntity<?> addOrder(@RequestBody Order order) {
