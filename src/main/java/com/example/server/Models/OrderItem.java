@@ -9,7 +9,10 @@ import lombok.Data;
 public class OrderItem {
 
     @Id
-    private Long id; // product id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;              // 🔥 ROW ID (AUTO)
+
+    private Long productId;       // 🔥 PRODUCT ID
 
     private String title;
     private String email;
